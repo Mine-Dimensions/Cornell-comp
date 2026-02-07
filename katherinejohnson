@@ -1,0 +1,29 @@
+n = int(input())
+seq = ["42"]
+lasdig = ""
+length = 1
+add = ""
+unique = 0
+for x in range(n-1):
+    for y in range(len(seq[x])):
+        if lasdig == seq[x][y:y+1]:
+            length += 1
+        else:
+            if lasdig != "":
+                add = add + str(length)
+                add = add[:unique] + lasdig + add[unique:]
+                unique += 1
+            length = 1
+            lasdig = seq[x][y:y+1]
+    if length >= 1:
+        lasdig = seq[x][y:y+1]
+        add = add + str(length)
+        length = 1
+        add = add[:unique] + lasdig + add[unique:]
+            
+    seq.append(add)
+    add = ""
+    lasdig = ""
+    unique = 0
+
+print(int(seq[-1]))
