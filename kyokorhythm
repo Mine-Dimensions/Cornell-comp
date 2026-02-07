@@ -1,0 +1,11 @@
+num = int(input())
+notes = input()
+points = 0
+for x in range (num):
+    if notes[x:x+1] == "*":
+        points += 100
+    if notes[x:x+1] == "o":
+        points += 50
+    if notes[x:x+1] == "x":
+        points += 0
+print(points)
