@@ -1,11 +1,14 @@
 num = int(input())
 notes = input()
 points = 0
+combo_count = 0
 for x in range (num):
     if notes[x:x+1] == "*":
-        points += 100
+        points += 100 + combo_count
+        combo_count += 1
     if notes[x:x+1] == "o":
-        points += 50
+        points += 50 +combo_count
+        combo_count += 1
     if notes[x:x+1] == "x":
-        points += 0
+        combo_count = 0
 print(points)
