@@ -1,0 +1,35 @@
+n = 0
+a = 0
+b = 0
+
+start = 0
+cur = 1
+
+inp = input()
+for x in range (len(inp)):
+    if inp[x:x+1] == " ":
+        if cur == 1:
+            n = int(inp[start:x])
+            start = x + 1
+            cur += 1
+        elif cur == 2:
+            a = int(inp[start:x])
+            start = x + 1
+            break
+        
+b = int(inp[start:])
+
+#print(f"{n} {a} {b}")
+
+day = 1
+count = 0
+bnum = 1
+while True:
+    if day == bnum * b + 1:
+        bnum += 1
+        a += 1
+    count += a
+    if count >= n:
+        break
+    day += 1
+print(day)
