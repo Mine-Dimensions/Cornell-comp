@@ -1,10 +1,5 @@
-butterfly = ""
-inp = input("Does the butterfly have a stripe? Type \"Has a stripe\" or \"Does not have a stripe\"\n")
+inp = input()
 if inp == "Has a stripe":
-    butterfly = "Viceroy"
-elif inp == "Does not have a stripe":
-    butterfly = "Monarch"
-else:
-    butterfly = "Invalid input. Type exactly what was asked."
-
-print(butterfly)
+    print("Viceroy")
+if inp == "Does not have a stripe":
+    print("Monarch")
